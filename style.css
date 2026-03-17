@@ -1,0 +1,107 @@
+:root {
+    --sidebar-width: 60px;
+}
+
+@font-face {
+  font-family: "ht_neon";
+  src: url("assets/ht_neon.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.beam {
+  position: absolute;
+  background-image: url(assets/poutre_60.png);
+  width: var(--sidebar-width);
+  z-index: 1;
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+}
+
+.top {
+    top: var(--sidebar-width);
+    left: 0;
+    height: 100vw;
+    transform: rotate(-90deg);
+    transform-origin: top left;
+}
+
+.right {
+    top: calc(var(--sidebar-width) / 2);
+    right: 0;
+    bottom: 0;
+    width: var(--sidebar-width);
+}
+
+.left {
+    top: calc(var(--sidebar-width) / 2);
+    left: 0;
+    bottom: 0;
+    width: var(--sidebar-width);
+}
+
+.left-diagonal {
+    top: 0;
+    left: calc(var(--sidebar-width) * 4);
+    height: calc(var(--sidebar-width) * 4 * sqrt(2));
+    transform: rotate(45deg);
+    transform-origin: top left;
+}
+
+.right-diagonal {
+    top: 0;
+    right: calc(var(--sidebar-width) * 4);
+    height: calc(var(--sidebar-width) * 4 * sqrt(2));
+    transform: rotate(-45deg);
+    transform-origin: top right;
+}
+
+.test {
+    background-color: green;
+    height:2000px;
+}
+
+body {
+    background-color: rgb(0, 0, 116);
+    position: relative;
+    margin: 0;
+    padding: var(--sidebar-width);
+    height: 100vh;
+    box-sizing: border-box;
+    /* background-image: url(assets/blue_brick_2.webp); */
+}
+
+.marquee {
+  overflow-x: clip;
+  overflow-y: visible;
+  margin: 20px 0;
+}
+
+.marquee div {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 15s infinite linear;
+  font-family: ht_neon;
+  font-size: 80px;
+  color: white;
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 40px #0ff,
+    0 0 80px #0ff;
+
+}
+
+.marquee div span {
+  padding-right: 2em;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0,0,0);
+  }
+  100% {
+    transform: translate3d(-50%,0,0);
+  }
+}
