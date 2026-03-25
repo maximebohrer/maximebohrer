@@ -134,6 +134,16 @@ body {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+#socials {
+  max-width: 200px;
+  background-color: salmon;
+}
+
+#projects {
+  max-width: 400px;
+  background-color: orange;
+}
+
 @keyframes marquee {
   0% {
     transform: translate3d(0,0,0);
@@ -141,4 +151,16 @@ body {
   100% {
     transform: translate3d(-50%,0,0);
   }
+}
+
+.iconlink {
+  margin-left: 5px;
+  white-space: nowrap;
+}
+
+.iconlink > img {
+  width: 16px;
+  height: 16px;
+  vertical-align: bottom;
+  margin-right: 5px;
 }
